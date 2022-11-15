@@ -171,11 +171,13 @@ def main():
 # load samples to DB, truncate DB before adding new data
 #  python3.9 db.py --loadData --DB ./db.json --samplesDir ./samples --truncateDB
 
-# extract samples from DB
-#  python3.9 db.py --extractData --DB ./db.json --samplesDir ./samples2
-
 # list existing IDs
 # python3.9 db.py --listIDs --DB ./db.json
+
+# extract samples from DB
+#  python3.9 db.py --extractData --DB ./db.json --samplesDir ./samples2
+# or (use indents when dumping jsons):
+# python3.9 db.py --extractData --DB ./db.json --samplesDir ./samples2 --jsonIndent 4
 
 # extract data from DB by ID
 # python3.9 db.py --extractData --DB ./db.json --byID sample02 --samplesDir ./samples2
