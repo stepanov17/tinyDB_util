@@ -59,7 +59,7 @@ def load_samples(db, samples_dir, truncate_db, keep_existing):
     files = os.listdir(samples_dir)
     for f in files:
         if '.json' in f:
-            load_sample(db, f'{samples_dir}\\{f}', f.replace('.json', ''), keep_existing)
+            load_sample(db, os.path.join(samples_dir, f), f.replace('.json', ''), keep_existing)
         else:
             print(f'warning: {f} has no json extension, skipping')
 
@@ -95,7 +95,7 @@ def save_sample(db, samples_dir, i, json_indent):
     if len(data) > 1:
         print(f'error: invalid number of entries for ID {i}')
 
-    with open(f'{samples_dir}\\{i}.json', 'w') as f:
+    with open(os.path.join(samples_dir, f'{i}.json'), 'w') as f:
         if json_indent > 0:
             json.dump(data[0], f, indent=json_indent)
         else:
